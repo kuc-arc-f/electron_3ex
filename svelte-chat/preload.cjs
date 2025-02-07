@@ -21,3 +21,7 @@ contextBridge.exposeInMainWorld('myGetTemplateFile', {
 contextBridge.exposeInMainWorld('myGetOgpApi', {
   getOgpApi: (a) => ipcRenderer.invoke('get-ogp-api', a),
 });
+
+contextBridge.exposeInMainWorld('myOenDialogApi', {
+  OenDialogApi: (a) => ipcRenderer.invoke('open-dialog-api', a),
+});

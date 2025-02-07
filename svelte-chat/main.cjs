@@ -119,6 +119,11 @@ function createWindow () {
     }
   });  
 
+  ipcMain.handle('open-dialog-api', async (event, options) => {
+    const result = await dialog.showMessageBox(options);
+    return result;
+  });
+
   win.loadFile('index.html');
   // Open the DevTools.
   //win.webContents.openDevTools();

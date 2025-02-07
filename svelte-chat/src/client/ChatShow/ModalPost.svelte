@@ -85,7 +85,7 @@ console.log(post_id, bodyString, chatId, postUserId);
   }
 }
 /**
-* childDeleteItem :
+* 
 * @param
 *
 * @return Promise<void>
@@ -93,10 +93,25 @@ console.log(post_id, bodyString, chatId, postUserId);
 const childDeleteItem = async function () : Promise<void>
 {
   try {
-    if (window.confirm("Delete OK ?") === false) {
+    /*
+    const options = {
+      message: 'Delete OK ?',
+    };
+    */
+    const options = {
+      type: 'question', // メッセージボックスのタイプ（info, question, warning, error）
+      title: '確認',
+      message: 'Delete OK ?',
+      buttons: ['はい', 'いいえ'], // ボタンの選択肢
+      defaultId: 0, // デフォルトで選択されるボタンのインデックス
+      cancelId: 1, // キャンセル時のボタンのインデックス
+    };
+    const res = await window.myOenDialogApi.OenDialogApi(options);
+    //console.log(res);
+    console.log("response=", res.response);
+    if(res.response === 1){
       return;
     }
-    //console.log("user.id=", userId);
 console.log("postUserId=", postUserId);
     await ChatPost.delete(post_id);
     //close
@@ -204,7 +219,7 @@ console.log("deleteThread=", id);
     <div class="modal-footer my-2 text-end">
         {#if (postUserId === userId)}
           <button type="button" class="btn btn-outline-red" id="modal_post_btn_delete"
-          on:click={() => childDeleteItem()}
+          on:click={childDeleteItem}
           >Delete</button>            
         {/if}
         <button type="button" class="btn-outline-blue" data-bs-dismiss="modal" id="modal_close_button"
