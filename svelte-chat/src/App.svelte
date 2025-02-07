@@ -7,7 +7,6 @@ import Head from "./components/Head.svelte";
 </script>
 
 <main>
-  <Head />
   <Router {routes} />
 </main>
 

@@ -6,8 +6,6 @@
   <div class="container">
     <span><a href="/" use:link>[ Home ]</a>
     </span>
-    <span><a href="/about" use:link>[ about ]</a>
-    </span>
     <span><a href="/chats" use:link>[ chats ]</a>
     </span>    
   </div>
@@ -15,8 +13,6 @@
 </header>
 
 <!--
-<span><a href="/todo" use:link>[ todo ]</a>
-</span>    
-<span><a href="/test" use:link>[ test ]</a>
+<span><a href="/about" use:link>[ about ]</a>
 </span>
 -->
