@@ -1,11 +1,11 @@
 //import moment from 'moment'
 import LibConfig from '../../lib/LibConfig'
 import HttpCommon from '../../lib/HttpCommon';
-
+import ApiUtil from '../../lib/ApiUtil';
 //
 const LibChat = {
   /**
-  * get :
+  *
   * @param
   *
   * @return Promise<any>
@@ -17,9 +17,9 @@ const LibChat = {
       let item: any = {
         "id": id
       };
-      const json = await HttpCommon.server_post(item, "/chats/get");
-//console.log(json);
-      if(json.ret === LibConfig.OK_CODE) {
+      const json = await ApiUtil.post("/api/chats/get", item);
+      //console.log(json);
+      if(json.ret === 200) {
         ret = json.data;
         //        console.log(json.data);
       }

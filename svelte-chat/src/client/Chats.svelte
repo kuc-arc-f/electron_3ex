@@ -9,6 +9,7 @@ import { onMount } from 'svelte';
 //import CrudIndex from "../client/chats/CrudIndex";
 import CrudIndex from "./chats/CrudIndex";
 import Chat from "../client/chats/Chat";
+import Head from "../components/Head.svelte";
 //import LibLayout from "../client/lib/LibLayout";
 //import Head from "../components/Head.svelte";
 
@@ -73,6 +74,9 @@ console.log(items);
     }    
 }
 </script>
+
+<!-- markUp -->
+<Head />
 <div class="bg-gray-100">
   <div class="container mx-auto p-4  pb-24"> 
     <!-- Title -->

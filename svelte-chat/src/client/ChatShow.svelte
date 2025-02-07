@@ -12,7 +12,7 @@ import LibCommon from '../lib/LibCommon';
 import CrudIndex from './chats/CrudIndex';
 import LibCookie from '../lib/LibCookie';
 import ChatPost from './chats/ChatPost';
-//import Chat from './chats/Chat';
+import Chat from './chats/Chat';
 import ModalPost from './ChatShow/ModalPost.svelte';
 import Head from "../components/Head.svelte";
 import SideBar from "../components/SideBar.svelte";
@@ -46,8 +46,9 @@ const startProc= async function() {
         itemsAll = await ChatPost.getList(id);
         items = await CrudIndex.getPageList(itemsAll.data, itemPage, perPage);
         console.log(itemsAll);
-        //const chatData = await Chat.get(Number(id));
-        //chat = chatData;
+        const chatData = await Chat.get(Number(id));
+        //console.log(chatData.data);
+        chat = chatData.data;
     } catch (e) {
     console.error(e);
     }
@@ -203,17 +204,9 @@ const parentUpdateList = async function(page: number) {
 
       <!-- コンテンツエリア -->
       <div class="bg-white rounded-md shadow-md p-4">
-        <h1 class="text-xl font-semibold mb-2">Input</h1>
+        <h1 class="text-xl font-semibold mb-2">{chat.name}</h1>
         <!-- ダッシュボードの内容をここに追加 
-        ID: {id}
-        <div class="row">
-          <div class="col-sm-6">
-              <h1>{chat.name}</h1>
-          </div>
-          <div class="col-sm-6 text-center pt-3">
-          </div>
-        </div>
-        <hr class="my-1" />
+        <span>ID: {id} </span>
         -->
         <div class="row">
             <div class="col-sm-9">
