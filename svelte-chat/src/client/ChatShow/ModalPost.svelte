@@ -93,11 +93,6 @@ console.log(post_id, bodyString, chatId, postUserId);
 const childDeleteItem = async function () : Promise<void>
 {
   try {
-    /*
-    const options = {
-      message: 'Delete OK ?',
-    };
-    */
     const options = {
       type: 'question', // メッセージボックスのタイプ（info, question, warning, error）
       title: '確認',
