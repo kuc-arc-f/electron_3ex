@@ -18,9 +18,9 @@ const ChatPost = {
           chatId: chatId,
           seachKey : searchKey,
         }
-        const json = await HttpCommon.server_post(item, "/chat_posts/search");
+        const json = await ApiUtil.post("/api/chat_posts/search", item);
         items = json.data
-// /console.log(items);	      
+console.log(items);     
       return items;
     } catch (e) {
       console.error(e);

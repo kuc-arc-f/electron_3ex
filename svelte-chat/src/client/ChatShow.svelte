@@ -103,8 +103,9 @@ async function clickSearch(){
         const skey = searchKey?.value;
 console.log("search:", skey);
         //@ts-ignore
-        items = await ChatPost.search(id, skey);
-//console.log(items);
+        const target = await ChatPost.search(id, skey);
+        items = target.data;
+console.log(items);
         chat_posts = items;
     } catch (error) {
         console.error(error);
@@ -191,11 +192,13 @@ const parentUpdateList = async function(page: number) {
                   <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-6a7 7 0 10-14 0 7 7 0 0014 0z"></path></svg>
               </div>
               <input type="text" 
+              id="searchKey"
               class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-               placeholder="Search Key">
+              placeholder="Search Key">
           </div>
           <div class="flex items-center space-x-4 ml-4">
-              <button class="p-2 btn-outline-blue">
+              <button class="p-2 btn-outline-blue"
+              on:click={clickSearch} >
                 Search
               </button>
           </div>
