@@ -42,7 +42,7 @@ console.log("idValue=", idValue);
 const startProc= async function() {
     try{
         const key = LibConfig.COOKIE_KEY_LAST_CHAT;
-        LibCookie.setCookie(key, String(id));
+        localStorage.setItem(key, String(id));
         itemsAll = await ChatPost.getList(id);
         items = await CrudIndex.getPageList(itemsAll.data, itemPage, perPage);
         console.log(itemsAll);

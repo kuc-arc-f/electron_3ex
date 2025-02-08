@@ -11,6 +11,7 @@ const LibConfig = {
   //cookie
   COOKIE_KEY_USER: "kit25_user",
   COOKIE_KEY_AUTH: "kit25_user_auth",
-  COOKIE_KEY_SESSION: "kit25_session",  
+  COOKIE_KEY_SESSION: "kit25_session", 
+  COOKIE_KEY_LAST_CHAT: "last_chat" 
 }
 export default LibConfig;
