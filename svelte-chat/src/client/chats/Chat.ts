@@ -42,9 +42,9 @@ const LibChat = {
         const item = {
           seachKey : searchKey,
         }
-        const json = await HttpCommon.server_post(item, "/chats/search");
+        const json = await ApiUtil.post("/api/chats/search", item);
         items = json.data
-console.log(items);	      
+//console.log(json);	      
       return items;
     } catch (e) {
       console.error(e);

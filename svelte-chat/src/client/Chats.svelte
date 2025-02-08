@@ -49,7 +49,9 @@ const clickClear = async function() {
         if(searchKey) {
             searchKey.value = "";
         }
-		items = await CrudIndex.getList();
+      const target = await CrudIndex.getList();
+      items = target.data;
+      //console.log(target.data);
     } catch (e) {
         console.error(e);
         throw new Error('Error , clickClear');
@@ -67,7 +69,8 @@ async function clickSearch(){
         const skey = searchKey?.value;
 console.log("search:", skey);
         //@ts-ignore
-        items = await Chat.search(skey);
+        const target = await Chat.search(skey);
+        items = target.data;
 console.log(items);
     } catch (error) {
         console.error(error);
@@ -88,12 +91,15 @@ console.log(items);
           <a use:link href={`/chatcreate`} class="btn btn-primary">Create
           </a>		
       </div>
-      <div class="col-md-12 pt-1">
+
+      <div class=" pt-1">
         <button class="btn btn-sm btn-outline-primary"  on:click={() => clickClear()}
           >Clear</button>
           <span class="search_key_wrap">
-              <input type="text" size="36" class="mx-2 my-2 input_text" name="searchKey"
-               id="searchKey" placeholder="Search Key">
+            <input type="text" size="36" 
+            class="border border-gray-400 rounded-md px-3 py-2 w-1/2 focus:outline-none focus:border-blue-500" 
+            name="searchKey"
+              id="searchKey" placeholder="Search Key">
           </span>
           <button class="btn btn-sm btn-outline-primary" on:click={() => clickSearch()}>Search</button>
       </div>
