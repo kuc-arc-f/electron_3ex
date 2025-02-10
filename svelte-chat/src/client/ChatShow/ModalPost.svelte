@@ -9,6 +9,7 @@ import ChatPost from '../chats/ChatPost';
 import BookMark from '../chats/BookMark';
 import LibCommon from '../../lib/LibCommon';
 import Thread from '../chats/Thread';
+
 //
 export let post_id: number, parentGetList: any , parentDialogClose: any; 
 
@@ -19,7 +20,7 @@ chatId: number = 0, threadItems:any[] = [];
 console.log("#ModalPost.post");
 console.log("post_id=", post_id);
 /**
-* loadProc
+*
 * @param
 *
 * @return

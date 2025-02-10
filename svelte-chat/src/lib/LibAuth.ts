@@ -36,7 +36,11 @@ console.log(user);
   {
     try {
       let ret = null;
-      return 1;
+      const authValue = localStorage.getItem(LibConfig.COOKIE_KEY_AUTH);
+      if(authValue){
+        ret = Number(authValue);
+      }
+      return ret;
 /*
       const key = LibConfig.COOKIE_KEY_USER;
       const auth = LibCookie.get_cookie(key);

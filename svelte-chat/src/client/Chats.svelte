@@ -4,7 +4,7 @@
 </svelte:head>
 
 <script lang="ts">
-import {link} from 'svelte-spa-router'
+import {link, push} from 'svelte-spa-router';
 import { onMount } from 'svelte';
 //import CrudIndex from "../client/chats/CrudIndex";
 import CrudIndex from "./chats/CrudIndex";

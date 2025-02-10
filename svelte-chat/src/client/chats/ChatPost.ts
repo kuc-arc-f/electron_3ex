@@ -45,7 +45,6 @@ console.log(items);
       }
       console.log(item);
       const res = await ApiUtil.post('/api/chat_posts/create', item);
-      //return res.data;
       return true;
     } catch (error) {
         console.error(error);

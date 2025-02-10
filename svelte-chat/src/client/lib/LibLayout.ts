@@ -1,5 +1,6 @@
 import LibCookie from './LibCookie';
 import LibConfig from "../../lib/LibConfig";
+import {link, push} from 'svelte-spa-router';
 
 const LibLayout = {
   /**
@@ -21,10 +22,11 @@ const LibLayout = {
       {
         console.log("LibLayout.pathname=", parsedUrl.pathname);
         if(typeof window === 'undefined'){ return;}
-        const authValue = LibCookie.getCookie(LibConfig.COOKIE_KEY_AUTH)
+        //const authValue = LibCookie.getCookie(LibConfig.COOKIE_KEY_AUTH);
+        const authValue = localStorage.getItem(LibConfig.COOKIE_KEY_AUTH);
         console.log("LibLayout.getCookie=", authValue);
         if(!authValue){
-          location.href = '/login';
+          push('/login');
           return;
         }
       }

@@ -1,5 +1,7 @@
 <script>
-	import {link} from 'svelte-spa-router'
+import {link} from 'svelte-spa-router'
+import LibLayout from "../client/lib/LibLayout";
+LibLayout.startProc();
 </script>
 
 <header class="">
@@ -13,6 +15,4 @@
 </header>
 
 <!--
-<span><a href="/about" use:link>[ about ]</a>
-</span>
 -->

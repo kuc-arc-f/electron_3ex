@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {link} from 'svelte-spa-router'
+  import {link, push} from 'svelte-spa-router'
   import { onMount } from 'svelte';
   import LibCookie from "../lib/LibCookie";
   import LibConfig from "../lib/LibConfig";  
@@ -43,13 +43,33 @@
     */
   });
   
-  const logOut = function(): void
+  const logOut = async function(): void
   {
     //console.log("#logOut.key=" , LibConfig.COOKIE_KEY_USER)
+    const options = {
+      type: 'question', // メッセージボックスのタイプ（info, question, warning, error）
+      title: '確認',
+      message: 'Log Out OK ?',
+      buttons: ['はい', 'いいえ'], // ボタンの選択肢
+      defaultId: 0, // デフォルトで選択されるボタンのインデックス
+      cancelId: 1, // キャンセル時のボタンのインデックス
+    };
+    const res = await window.myOenDialogApi.OenDialogApi(options);
+    //console.log(res);
+    console.log("response=", res.response);
+    if(res.response === 1){
+      return;
+    }
+    const key = LibConfig.COOKIE_KEY_AUTH;
+    localStorage.removeItem(key);
+    push("/login");
+
+    /* 
     if (window.confirm("LogOut OK ?")) {
       LibCookie.deleteCookie(LibConfig.COOKIE_KEY_AUTH);
       location.href = "/login";
     }
+    */
   
   }  
   </script>
