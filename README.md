@@ -6,14 +6,13 @@
 
  date    : 2025/02/06
 
- update  : 2025/02/09 
+ update  : 2025/02/10 
 
 ***
 ### Summary
 
 electron node, example
 
-***
 
 ***
 ### Setup
