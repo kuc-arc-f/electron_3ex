@@ -15,4 +15,8 @@ LibLayout.startProc();
 </header>
 
 <!--
+<span><a href="/about" use:link>[ about ]</a>
+</span>    
+<span><a href="/thread?id=0" use:link>[ thread ]</a>
+</span>    
 -->
