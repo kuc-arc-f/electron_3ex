@@ -6,11 +6,15 @@
 
  date    : 2025/02/07
 
- update  :
+ update  : 2025/02/10
 
 ***
 
 electron + svelte-chat UI , example
+
+***
+
+![img1](/image/chat0211a.png)
 
 ***
 ### setup
