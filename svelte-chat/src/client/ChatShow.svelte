@@ -177,11 +177,16 @@ const parentUpdateList = async function(page: number) {
 }
 </script>
 
-
-
 <!-- MarkUp -->
+
 <div class="bg-gray-50 font-sans">
-  <div class="flex h-screen">
+  <!-- Fixed Header -->
+  <header class="fixed top-0 left-0 right-0 bg-white border-b border-gray-400 h-[48px] flex items-center justify-center z-10">
+    <a use:link href="/">
+      <h1 class="text-lg font-medium text-gray-700">Home</h1>
+    </a>
+  </header>
+  <div class="flex h-screen mt-[48px]">
     <SideBar mode={MODE_HOME} id={id} />
     <!-- メインコンテンツ -->
     <main class="flex-1 bg-gray-50 p-4">

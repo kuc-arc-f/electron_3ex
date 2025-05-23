@@ -6,17 +6,13 @@ LibLayout.startProc();
 
 <header class="">
   <div class="container">
-    <span><a href="/" use:link>[ Home ]</a>
+    <span class="ms-2"><a href="/" use:link>[ Home ]</a>
     </span>
-    <span><a href="/chats" use:link>[ chats ]</a>
+    <span class="ms-2"><a href="/chats" use:link>[ Chats ]</a>
     </span>    
   </div>
   <hr />
 </header>
 
 <!--
-<span><a href="/about" use:link>[ about ]</a>
-</span>    
-<span><a href="/thread?id=0" use:link>[ thread ]</a>
-</span>    
 -->
